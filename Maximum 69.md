@@ -1,3 +1,5 @@
+**STRING CONVERSION APPROACH
+
 The Python function takes an integer `num` as input and returns the largest possible number you can get by changing at most one digit from a 6 or a 9. 
 
 Here's a breakdown of how it works:
@@ -17,3 +19,15 @@ Here's a breakdown of how it works:
    - Finally, it converts the resulting string back to an integer using `int()`.
 
 Overall, this function achieves the goal of finding the maximum number possible by changing at most one digit 6 to a 9 in the original input number.
+
+
+**INTEGER APPROACH**
+UNDERLYING CONCEPT
+- Given an integer, suppose 9699
+- integer % 10 = last digit(9 here)
+- integer / 10 = digits excluding last digit(969 here)
+- 9699 = (9*1000) + (6*100) + (9*10) + (9*1)
+- What can be noticed above is that the one digit is the only digit not divisible by 10, hence it will always be the remainder/
+
+  CODE EXPLANATION
+- As mentioned in the first approach, the goal in this question is to find the last occurence of 6.
