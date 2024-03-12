@@ -21,13 +21,31 @@ Here's a breakdown of how it works:
 Overall, this function achieves the goal of finding the maximum number possible by changing at most one digit 6 to a 9 in the original input number.
 
 
-**INTEGER APPROACH**
+**INTEGER APPROACH
+
 UNDERLYING CONCEPT
+
+- As mentioned in the first approach, the goal in this question is to find the last occurence of 6.
 - Given an integer, suppose 9699
 - integer % 10 = last digit(9 here)
 - integer / 10 = digits excluding last digit(969 here)
 - 9699 = (9*1000) + (6*100) + (9*10) + (9*1)
-- What can be noticed above is that the one digit is the only digit not divisible by 10, hence it will always be the remainder/
+- What can be noticed above is that the one digit is the only digit not divisible by 10, hence integer%10 will always give the last digit.
 
-  CODE EXPLANATION
-- As mentioned in the first approach, the goal in this question is to find the last occurence of 6.
+  Here is the breakdown of the code
+  1. **Setting intial variable: **
+   - We take a temp variable and set it to num(input number). This is done due to the fact that we want to keep the original number intact.
+   - sinind = -1, is a variable used to keep track of the latest occurence of 6.
+   - i = 0, i is the digit index
+
+   2. **loop**
+   - begin a while loop, temp >0
+   - at each iteration we use temp%10 to get the current digit.
+   - if current digit = 6, we set sixind to i. During the loop, the larger digit will reflesh the sixindex. So when the loop ends, we got the biggest 6 digit.
+   - else we move one digit to the left, by simply dividing temp by 10.
+   - at last we increase i by 1
+ 
+  3. **getting the final output**
+   - if the number six is not present, represented by the condition sixind = -1, we return num
+   - else we add 3 to the last occurence of 6, by using num + 3*(10**sixind), where ** represents power
+  
