@@ -38,14 +38,14 @@ UNDERLYING CONCEPT
    - sinind = -1, is a variable used to keep track of the latest occurence of 6.
    - i = 0, i is the digit index
 
-2. **loop**
+2. **loop: **
    - begin a while loop, temp >0
    - at each iteration we use temp%10 to get the current digit.
    - if current digit = 6, we set sixind to i. During the loop, the larger digit will reflesh the sixindex. So when the loop ends, we got the biggest 6 digit.
    - else we move one digit to the left, by simply dividing temp by 10.
    - at last we increase i by 1
  
-3. **getting the final output**
+3. **getting the final output: **
    - if the number six is not present, represented by the condition sixind = -1, we return num
    - else we add 3 to the last occurence of 6, by using num + 3*(10**sixind), where ** represents power
   
